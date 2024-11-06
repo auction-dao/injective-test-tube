@@ -110,8 +110,19 @@ func InitChain(appInstance *app.InjectiveApp) (sdk.Context, secp256k1.PrivKey) {
 	// Set up exchange genesis state
 	exchangeParams := exchangetypes.DefaultParams()
 	exchangeParams.IsInstantDerivativeMarketLaunchEnabled = true
+	exchangeParams.DefaultSpotTakerFeeRate = math.LegacyNewDecWithPrec(5, 4)
 	exchangeGen := exchangetypes.GenesisState{
 		Params: exchangeParams,
+		DenomDecimals: []exchangetypes.DenomDecimals{
+			{
+				Denom:    "usdt",
+				Decimals: 6,
+			},
+			{
+				Denom:    "hinj",
+				Decimals: 18,
+			},
+		},
 	}
 	genesisState[exchangetypes.ModuleName] = encCfg.Codec.MustMarshalJSON(&exchangeGen)
 

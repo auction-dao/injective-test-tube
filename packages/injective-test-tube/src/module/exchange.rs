@@ -212,7 +212,7 @@ mod tests {
                 base_denom: "inj".to_string(),
                 quote_denom: "usdt".to_string(),
                 maker_fee_rate: "-100000000000000".to_string(),
-                taker_fee_rate: "1000000000000000".to_string(),
+                taker_fee_rate: "500000000000000".to_string(),
                 relayer_fee_share_rate: "400000000000000000".to_string(),
                 market_id: "0xd5a22be807011d5e42d5b77da3f417e22676efae494109cd01c242ad46630115"
                     .to_string(),
