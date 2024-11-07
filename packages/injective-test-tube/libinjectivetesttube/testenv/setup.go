@@ -111,6 +111,7 @@ func InitChain(appInstance *app.InjectiveApp) (sdk.Context, secp256k1.PrivKey) {
 	exchangeParams := exchangetypes.DefaultParams()
 	exchangeParams.IsInstantDerivativeMarketLaunchEnabled = true
 	exchangeParams.DefaultSpotTakerFeeRate = math.LegacyNewDecWithPrec(5, 4)
+	exchangeParams.SpotAtomicMarketOrderFeeMultiplier = math.LegacyNewDecWithPrec(2, 0)
 	exchangeGen := exchangetypes.GenesisState{
 		Params: exchangeParams,
 		DenomDecimals: []exchangetypes.DenomDecimals{
