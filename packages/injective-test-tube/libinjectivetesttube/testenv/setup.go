@@ -157,6 +157,7 @@ func InitChain(appInstance *app.InjectiveApp) (sdk.Context, secp256k1.PrivKey) {
 			Validators:      []abci.ValidatorUpdate{},
 			ConsensusParams: consensusParams,
 			AppStateBytes:   stateBytes,
+			Time:            time.Now().UTC(),
 		},
 	)
 	requireNoErr(err)
